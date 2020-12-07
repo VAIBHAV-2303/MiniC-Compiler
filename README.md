@@ -24,35 +24,35 @@ A decent amount of sample programs are available in *Sample Programs* directory 
 ## How To Run
 
 ```bash
-make
+bar@foo:~/MiniC-Compiler/src$ make
 ```
 
 Running *make* will compile the entire code and generate some Antlr files and two executables *main* and *bonus*.
 
 ```bash
-./main <path to .mc file>
+bar@foo:~/MiniC-Compiler/src$ ./main <path to .mc file>
 ```
 
-This will generate LLVM IR for the code in a file called *temp.ll* in your main directory. This is in human readable format.
+This will generate LLVM IR for the code in a file called *temp.ll*. This is in human readable format.
 
 ```bash
-llvm-as temp.ll
-lli temp.bc
+bar@foo:~/MiniC-Compiler/src$ llvm-as temp.ll
+bar@foo:~/MiniC-Compiler/src$ lli temp.bc
 ```
 
 This will convert the IR to bitcode format which is then ready to be executed by the LLVM Interpreter lli.
 
 ```bash
-./bonus
+bar@foo:~/MiniC-Compiler/src$ ./bonus
 ```
 
 This will automatically read the *temp.bc* file and print the Extended Basic Blocks from the Control Flow Graph which are used in Super Value Numbering.
 
 ```bash
-make clean
+bar@foo:~/MiniC-Compiler/src$ make clean
 ```
 
-Use this to clean up the generated files.
+Use this to clean up the generated files and executables.
 
 ## Author
 
